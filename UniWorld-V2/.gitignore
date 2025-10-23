@@ -315,8 +315,8 @@ HPSv2
 
 *.err
 reward_ckpts/
-*.jpg
 *.png
+test_cases/
 results/
 tests/
 evaluations/
