@@ -129,7 +129,8 @@ UniWorld-V1 shows excellent performance in **20+** tasks.
   <img src="https://contrib.rocks/image?repo=PKU-YuanGroup/UniWorld-V1" />
 </a>
 
+<!--
 # ✨ Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=PKU-YuanGroup/UniWorld-V1&type=Date)](https://www.star-history.com/#PKU-YuanGroup/UniWorld-V1&Date)
-
+-->
