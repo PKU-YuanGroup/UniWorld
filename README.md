@@ -3,7 +3,7 @@
     <img src="https://s21.ax1x.com/2025/06/03/pVCBdw8.png" width="200"/>
 <p>
 <h2 align="center"> 
-  <a href="https://arxiv.org/abs/2506.03147">
+  <a href="https://arxiv.org/abs/2510.16888">
     UniWorld-Family
   </a>
 </h2>
@@ -88,7 +88,7 @@ UniWorld-V1 shows excellent performance in **20+** tasks.
 @article{li2025uniworldv2,
     title={Uniworld-V2: Reinforce Image Editing with Diffusion Negative-aware Finetuning and MLLM Implicit Feedback},
     author={Li, Zongjian and Liu, Zheyuan and Zhang, Qihui and Lin, Bin and Yuan, Shenghai and Yan, Zhiyuan and Ye, Yang and Yu, Wangbo and Niu, Yuwei and Yuan, Li},
-    journal={arXiv preprint arXiv:2506.03147},
+    journal={arXiv preprint arXiv:2510.16888},
     year={2025}
 }
 @article{lin2025uniworld,
