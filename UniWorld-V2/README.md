@@ -3,7 +3,7 @@
 <p>
 <h2 align="center"> 
   <a href="https://arxiv.org/abs/2510.16888">
-    Edit-R1: Reinforce Image Editing with Diffusion Negative-Aware Finetuning and
+    UniWorld-V2: Reinforce Image Editing with Diffusion Negative-Aware Finetuning and
 MLLM Implicit Feedback
   </a>
 </h2>
