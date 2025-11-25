@@ -1,0 +1,9 @@
+ann_txt_path: '/work/share/projects/gyy/resi2v/ResI2V_MM/examples/wan2.1/all_videos.txt'
+save_path: '/work/share1/caption/osp/lmdb/all_videos_81f_864p'
+sample_height: 720
+sample_width: 1280
+sample_num_frames: 81
+min_hxw: 1327104 # 1080x1920: 2073600 (used as 2000000), 864x1536: 1327104, 720x1280: 921600, 480x832: 399360, 576x1024: 589824
+train_fps: 16
+max_h_div_w_ratio: 1.2
+min_h_div_w_ratio: 0.4

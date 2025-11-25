@@ -1,0 +1,80 @@
+# test yaml
+
+model_name: "flashi2v"
+seed: 1024
+output_dir: "/work/share/projects/gyy/Uniworld_OSP2/output"
+# /work/share/projects/gyy/zhubin_FlashI2V/configs
+training_iteration: 1000000
+# ddp_size: 1
+fsdp_size: 8
+cp_size: 2
+use_context_parallel: True
+reshard_after_forward: null
+gradient_checkpointing: True
+gradient_accumulation_steps: 1
+init_max_grad_norm: 1.0
+log_interval: 1
+save_interval: 200
+weight_dtype: "bf16"
+ema_decay: 0.9999
+ema_update_interval: 1
+save_with_dcp_api: True
+
+wandb_config:
+  project_name: "uniworld_osp2"
+  exp_name: "uniworld_osp2"
+
+model_config:
+  dim: 5120
+  ffn_dim: 13824
+  freq_dim: 256
+  in_dim: 16
+  num_heads: 40
+  num_layers: 40
+  out_dim: 16
+  text_len": 512
+  low_freq_energy_ratio: [0.05, 0.95]
+  fft_return_abs: True
+  conv3x3x3_proj: False
+  pretrained_model_dir_or_checkpoint: "/work/share1/checkpoint/gyy/flashi2v_14b/diffusers_weights/"
+
+scheduler_config:
+  scheduler_name: "flashi2v_flow_matching"
+  use_dynamic_shifting: True
+  use_logitnorm_time_sampling: True
+
+vae_config:
+  vae_path: "/work/share1/checkpoint/Wan-AI/Wan2.1-T2V-14B/Wan2.1_VAE.pth"
+  dtype: "fp32"
+
+text_encoder_config:
+  text_len: 512
+  checkpoint_path: "/work/share1/checkpoint/Wan-AI/Wan2.1-T2V-14B/models_t5_umt5-xxl-enc-bf16.pth"
+  use_fsdp: True
+
+vlm_encoder_config:
+  checkpoint_path: "/work/share/projects/gyy/zhubin_FlashI2V/checkpoints/Qwen2.5-VL-7B-Instruct"
+
+data_config:
+  batch_size: 1
+  num_workers: 16
+  pin_memory: False
+  drop_last: True
+  shuffle: True
+  dataset_name: "flashi2v"
+  dataset_config:
+    metafile_or_dir_path: "/work/share1/caption/osp/lmdb/all_videos_81f_864p/filtered_samples_2088532.lmdb"
+    text_tokenizer_path: "/work/share1/checkpoint/Wan-AI/Wan2.1-T2V-14B/google/umt5-xxl"
+    text_drop_ratio: 0.1
+    sample_height: 480
+    sample_width: 832
+    sample_num_frames: 49
+    train_fps: 16
+    tokenizer_max_length: 512
+    return_prompt_mask: True
+  sampler_name: "stateful_distributed"
+  collator_name: "flashi2v"
+  
+optimizer_config:
+  lr: 0.000005
+  weight_decay: 0.0
