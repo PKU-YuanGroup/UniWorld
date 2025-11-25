@@ -33,6 +33,7 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/uniworld-v1-high-resolution-semantic-encoders/text-to-image-generation-on-geneval)](https://paperswithcode.com/sota/text-to-image-generation-on-geneval?p=uniworld-v1-high-resolution-semantic-encoders) <br> -->
 
 # 📣 News
+* **[2025/11/25]**:🤗 We release **Uniworld-OSP2.0**, a VLM-Enhanced Unified Framework for Image-to-Video Generation. The architecture scales [FlashI2V](https://github.com/PKU-YuanGroup/FlashI2V) to 14B parameters and introduces a novel conditioning mechanism based on a 7B VLM to losslessly inherit powerful semantic understanding. Uniworld-OSP2.0 surpasses the video generation model Wan2.1 across six key evaluation metrics on Vbench-I2V. 
 
 * **[2025/10/19]**: We release **UniWorld-V2**, which employs [DiffusionNFT](https://github.com/NVlabs/DiffusionNFT) and a training-free reward model derived from pretrained MLLMs to fine-tune diffusion models for image editing. [UniWorld-Qwen-Image-Edit-2509](https://huggingface.co/collections/chestnutlzj/edit-r1-68dc3ecce74f5d37314d59f4) and [UniWorld-FLUX.1-Kontext-Dev](https://huggingface.co/collections/chestnutlzj/edit-r1-68dc3ecce74f5d37314d59f4) are open-sourced.
 
@@ -45,11 +46,24 @@
 > </p ></details>
 
 # 💡 Hub
-
+* [UniWorld-OSP2.0](UniWorld-OSP2.0/README.md)
 * [UniWorld-V2](UniWorld-V2/README.md)
 * [UniWorld-V1](UniWorld-V1/README.md)
 
 # 😍 Gallery
+
+## UniWorld-OSP2.0
+
+| **Model**       | **I2V Paradigm**               | **Subject Consistency ↑** | **Background Consistency ↑** | **Motion Smoothness ↑** | **Dynamic Degree ↑** | **Aesthetic Quality ↑** | **Imaging Quality ↑** | **I2V Subject Consistency ↑** | **I2V Background Consistency ↑** |
+| ----------------------- | -------------------------------------- | ---------------------------------- | ------------------------------------- | -------------------------------- | ----------------------------- | -------------------------------- | ------------------------------ | -------------------------------------- | ----------------------------------------- |
+| SVD-XT-1.0 (1.5B)     | Repeating Concat and Adding Noise    | 95.52                            | 96.61                               | 98.09                          | 52.36                       | 60.15                          | 69.80                        | 97.52                                | 97.63                                   |
+| SVD-XT-1.1 (1.5B)     | Repeating Concat and Adding Noise    | 95.42                            | 96.77                               | 98.12                          | 43.17                       | 60.23                          | 70.23                        | 97.51                                | 97.62                                   |
+| SEINE-512x512 (1.8B)  | Inpainting                           | 95.28                            | 97.12                               | 97.12                          | 27.07                       | 64.55                          | 71.39                        | 97.15                                | 96.94                                   |
+| CogVideoX-5B-I2V      | Zero-padding Concat and Adding Noise | 94.34                            | 96.42                               | 98.40                          | 33.17                       | 61.87                          | 70.01                        | 97.19                                | 96.74                                   |
+| Wan2.1-I2V-14B-720P   | Inpainting                           | 94.86                            | 97.07                               | 97.90                          | 51.38                       | 64.75                          | 70.44                        | 96.95                                | 96.44                                   |
+| CogVideoX1.5-5B-I2V   | Zero-padding Concat and Adding Noise | 95.04                            | 96.52                               | 98.47                          | 37.48                       | 62.68                          | 70.99                        | 97.78                                | 98.73                                   |
+| Wan2.1-I2V-14B-480P   | Inpainting                           | 95.68                            | 97.44                               | 98.46                          | 45.20                       | 61.44                          | 70.37                        | 97.83                                | 99.08                                   |
+| **Uniworld-OSP2.0** | FlashI2V                             | **96.21**                            | **97.71**                               | **98.47**                          | **46.10**                      | **66.55**                          | 70.57                        | **97.99**                                | 98.94                 
 
 ## UniWorld-V2
 
