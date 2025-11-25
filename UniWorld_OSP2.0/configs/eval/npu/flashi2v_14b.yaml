@@ -1,0 +1,68 @@
+# test yaml
+
+model_name: "flashi2v"
+pipeline_name: "flashi2v"
+seed: 2025
+
+output_dir: "/work/share/projects/gyy/UltraI2V/samples/flashi2v_14b_vbench_49x480x832"
+
+num_frames: 49
+height: 480
+width: 832
+save_fps: 16
+batch_size: 1
+
+fsdp_size: 8
+cp_size: 1
+use_context_parallel: True
+reshard_after_forward: null
+weight_dtype: "bf16"
+save_with_dcp_api: False
+
+model_config:
+  dim: 5120
+  ffn_dim: 13824
+  freq_dim: 256
+  in_dim: 16
+  num_heads: 40
+  num_layers: 40
+  out_dim: 16
+  text_len: 512
+  low_freq_energy_ratio: 0.1
+  fft_return_abs: True
+  conv3x3x3_proj: False
+  pretrained_model_dir_or_checkpoint: "/work/share1/checkpoint/gyy/flashi2v_14b/diffusers_weights/"
+
+scheduler_config:
+  scheduler_name: "flashi2v_flow_matching"
+  num_inference_steps: 50
+  shift: 7.0
+  guidance_scale: 5.0
+
+vae_config:
+  vae_path: "/work/share1/checkpoint/Wan-AI/Wan2.1-T2V-14B/Wan2.1_VAE.pth"
+  dtype: "fp32"
+
+text_encoder_config:
+  text_len: 512
+  checkpoint_path: "/work/share1/checkpoint/Wan-AI/Wan2.1-T2V-14B/models_t5_umt5-xxl-enc-bf16.pth"
+  text_tokenizer_path: "/work/share1/checkpoint/Wan-AI/Wan2.1-T2V-14B/google/umt5-xxl"
+  use_fsdp: True
+
+data_config:
+  batch_size: 1
+  num_workers: 16
+  pin_memory: False
+  dataset_name: "i2v_eval"
+  dataset_config:
+    metafile_or_dir_path: "/work/share1/caption/osp/lmdb/vbench_i2v_samples_355.lmdb"
+    text_tokenizer_path: "/work/share1/checkpoint/Wan-AI/Wan2.1-T2V-14B/google/umt5-xxl"
+    num_samples_per_prompt: 5
+    sample_height: 480
+    sample_width: 832
+    sample_num_frames: 49
+    train_fps: 16
+    tokenizer_max_length: 512
+    return_prompt_mask: True
+  sampler_name: "stateful_distributed"
+  collator_name: "i2v_eval"

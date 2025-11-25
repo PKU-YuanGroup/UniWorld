@@ -1,0 +1,1 @@
+python filter_data.py --filter_config configs/filter_config.yaml
