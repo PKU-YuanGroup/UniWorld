@@ -14,7 +14,7 @@ Pull requests are welcome! ⭐ Star the repo to stay updated!
 
 # 📣 News
 * 🧩 **Model weights & stylized dataset release (Coming soon)** — 12 artistic styles & metadata will be open-sourced.
-* 📘 **[2025-11-25]** Uniworld-OSP2.0 technical report has been released!.[Click to Download](./docs/Uniworld_OSP2_Report.pdf)
+* 📘 **[2025-11-25]** Uniworld-OSP2.0 technical report has been released!.[Click to Download](./docs/Uniworld-OSP2.0.pdf)
 * 🔥 **[2025-11-25]** We officially release **Uniworld-OSP2.0 (21B)** — featuring VLM-enhanced conditioning, unified Image-to-Stylized-Video (I2SV), and breakthrough performance beyond Wan2.1.
 
 
