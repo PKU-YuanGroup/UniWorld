@@ -1,8 +1,0 @@
-assets/i2v/0001.jpg
-assets/i2v/0002.jpg
-assets/i2v/0003.jpg
-assets/i2v/0004.jpg
-assets/i2v/0005.jpg
-assets/i2v/0006.jpg
-assets/i2v/0007.jpg
-assets/i2v/0008.jpg
